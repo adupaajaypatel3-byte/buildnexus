@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BuildNexus — AI Construction Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+<div class="container">
+<h1>BuildNexus</h1>
+<p>AI-powered construction planning, cost estimates, and safety compliance for UK builders.</p>
+</div>
+</header>
+
+
+<main class="container grid">
+<section class="card">
+<h2>Quick Cost Estimate</h2>
+<form id="estimateForm">
+<label>Project name<br><input id="projName" placeholder="e.g. Loft conversion"></label>
+<label>Project size (m²)<br><input type="number" id="area" min="1" value="50"></label>
+<label>Average cost per m² (£)<br><input type="number" id="costPerM2" value="1200"></label>
+<label>Duration (weeks)<br><input type="number" id="weeks" value="8"></label>
+<button type="submit">Generate Estimate</button>
+</form>
+
+
+<div id="estimateResult" class="result" aria-live="polite"></div>
+</section>
+
+
+<section class="card">
+<h2>Safety Documents (CDM / RAMS)</h2>
+<p>Generate basic compliance documents you can download.</p>
+<label>Site hazards<br><input id="hazards" placeholder="e.g. scaffolding, asbestos"></label>
+<button id="genDocs">Generate Documents</button>
+<div id="docLinks"></div>
+</section>
+
+
+<section class="card">
+<h2>Contractor Match</h2>
+<p>Find local contractors matching your project size and specialty (mock data).</p>
+<label>Project type<br>
+<select id="projType">
+<option>General Builder</option>
+<option>Roofing</option>
+<option>Electrician</option>
+<option>Plumber</option>
+</select>
+</label>
+<button id="findContractors">Find Contractors</button>
+<ul id="contractorList"></ul>
+</section>
+</main>
+
+
+<footer class="container footer">© BuildNexus — Prototype</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
